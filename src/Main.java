@@ -16,11 +16,17 @@ public class Main {
         // Crear instancia de BeeBot
         BeeBot beebot = new BeeBot();
 
-        // Ejecutar la secuencia de comandos
-        beebot.go(moveForward);
-        beebot.go(turnLeft);
-        beebot.go(moveForward);
-        beebot.go(moveForward);
-        beebot.go(turnRight);
+        // Agregar comandos a la lista
+        beebot.addCommand(moveForward);
+        beebot.addCommand(turnLeft);
+        beebot.addCommand(moveForward);
+        beebot.addCommand(moveForward);
+        beebot.addCommand(turnRight);
+
+        // Borrar el último comando
+        beebot.deleteCommand();
+
+        // Ejecutar la secuencia de comandos almacenados
+        beebot.go();
     }
 }
